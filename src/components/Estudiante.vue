@@ -1,10 +1,45 @@
 <template>
+
+<div class="container">
   <h1>Componente Estudiante</h1>
-  <input v-model="id" type="text">
-  <input v-model="nombre" type="text">
+    
+<div class="form">
+        <p type="Id: ">
+            <input v-model="id" type="text"> 
+          </p>
   <button @click="consultarPorId">Consultar</button>
-   <button @click="insertar">Insertar</button>
-    <input  v-model="apellido" type="text">
+          <p type="Nombre:">
+           <input v-model="nombre" type="text">
+          </p>
+          <p type="Apellido:">
+            <input  v-model="apellido" type="text">
+          </p>
+          <p type="Genero:">
+            <input  v-model="genero" type="text" />
+          </p>
+          <p type="Fecha de nacimiento:">
+            <input  v-model="fechaNacimiento" type="text" />
+          </p>
+          <p type="Correo:">
+            <input  v-model="correo" type="text" />
+          </p>
+          <p type="Telefono:">
+            <input  v-model="telefono" type="text" />
+          </p>
+          <p type="Carrera:">
+            <input  v-model="carrera" type="text" />
+          </p>
+          <p type="Semestre:">
+            <input  v-model="semestre" type="text" />
+          </p>
+          <p type="Creditos:">
+            <input  v-model="creditos" type="text" />
+          </p>
+
+<button @click="insertar">Insertar</button>
+</div>
+ </div>
+  
 
 </template>
 
@@ -17,7 +52,15 @@ export default {
         return{
             id:null,
             nombre:null,
-            apellido:null
+            apellido:null,
+            genero:null,
+            fechaNacimiento:null,
+            correo:null,
+            telefono:null,
+            carrera:null,
+            semestre:null,
+            creditos:null
+
         }
     },
     methods:{
@@ -26,18 +69,27 @@ export default {
            console.log("desde componente");
            console.log(data);
            this.nombre=data.nombre;
+           this.apellido=data.apellido;
+           this.genero=data.genero;
+           this.fechaNacimiento=data.fechaNacimiento;
+           this.correo=data.correo;
+           this.telefono=data.telefono;
+           this.carrera=data.carrera;
+           this.semestre=data.semestre;
+           this.creditos=data.creditos;
+
         },
        async insertar(){
     const estuBody ={
-        nombre: "Juan",
+        nombre: this.nombre,
         apellido: this.apellido,
-        genero: "M",
-        fechaNacimiento: "1996-04-01T00:00:00",
-        correo: "edison@hotmail.com",
-        telefono: "2051651",
-        carrera: "Computacion",
-        semestre: "Decimo",
-        creditos: 19
+        genero: this.genero,
+        fechaNacimiento: this.fechaNacimiento,
+        correo: this.correo,
+        telefono: this.telefono,
+        carrera: this.carrera,
+        semestre: this.semestre,
+        creditos: this.creditos
     };
 
            await insertarFachada(estuBody);
@@ -48,5 +100,51 @@ export default {
 </script>
 
 <style>
+   .container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+  }
 
+button {
+  color: #bfbfc2;
+  background-color: #183e57;
+  border-style: groove;
+  border-radius: 10px;
+  padding: 5px 15px;
+
+}
+
+
+p{
+    display: grid;
+    justify-content: center;
+}
+  p:before {
+    content: attr(type);
+    display: block;
+   text-align: left;
+    margin: 3px 2px;
+    font-size: 16px;
+    color: #5a5a5a;
+  }
+
+.form {
+    height: 700px;
+    width: 600px;
+    background-color: #e6e6e6;
+    border-radius: 8px;
+    padding: 20px 30px;
+
+    box-shadow: 0px 0px 40px -10px #000;
+  }
+   input {
+    width: 300px;
+    background: rgb(255, 255, 255);
+    color: rgb(60, 60, 60);
+
+  }
+  input:focus {
+    border-bottom: 3px solid #78788c;
+  }
 </style>
