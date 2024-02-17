@@ -9,14 +9,14 @@ const routes = [
 
     {
         path: '/actualizar',
-        compontent: EstudianteActualizar
+        component: EstudianteActualizar
     },
     {
         path: '/consultar',
         component: EstudianteConsultar
     },
     {
-        path: '/elimi',
+        path: '/eliminar',
         component: EstudianteEliminar
     },
     {

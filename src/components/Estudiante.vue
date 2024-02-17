@@ -15,25 +15,25 @@
         <input v-model="apellido" type="text" placeholder="Apellido"/>
       </p>
       <p type="Genero:">
-        <input v-model="genero" type="text" />
+        <input v-model="genero" type="text" placeholder="Genero"/>
       </p>
       <p type="Fecha de nacimiento:">
-        <input v-model="fechaNacimiento" type="text" />
+        <input v-model="fechaNacimiento" type="text" placeholder="Fecha de nacimiento"/>
       </p>
       <p type="Correo:">
-        <input v-model="correo" type="text" />
+        <input v-model="correo" type="text" placeholder="Correo"/>
       </p>
       <p type="Telefono:">
-        <input v-model="telefono" type="text" />
+        <input v-model="telefono" type="text" placeholder="Telefono"/>
       </p>
       <p type="Carrera:">
-        <input v-model="carrera" type="text" />
+        <input v-model="carrera" type="text" placeholder="Carrera"/>
       </p>
       <p type="Semestre:">
-        <input v-model="semestre" type="text" />
+        <input v-model="semestre" type="text" placeholder="Semestre"/>
       </p>
       <p type="Creditos:">
-        <input v-model="creditos" type="text" />
+        <input v-model="creditos" type="text" placeholder="Creditos"/>
       </p>
 
       <button @click="insertar">Insertar</button>
