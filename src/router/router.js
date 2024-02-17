@@ -1,28 +1,40 @@
 import {createRouter, createWebHashHistory} from 'vue-router'
 
-import EstudianteActualizar from '../pages/EstudianteActualizar'
-import EstudianteConsultar from '../pages/EstudianteConsultar'
-import EstudianteEliminar from '../pages/EstudianteEliminar'
-import EstudianteGuardar from '../pages/EstudianteGuardar'
+//import EstudianteActualizar from '../pages/EstudianteActualizar'
+//import EstudianteConsultar from '../pages/EstudianteConsultar'
+//import EstudianteEliminar from '../pages/EstudianteEliminar'
+//import EstudianteGuardar from '../pages/EstudianteGuardar'
+//import NoFoundPage from '../pages/NoFoundPage'
 
 const routes = [
 
     {
         path: '/actualizar',
-        component: EstudianteActualizar
+        
+        component: ()=> import('../pages/EstudianteActualizar')
     },
     {
         path: '/consultar',
-        component: EstudianteConsultar
+     
+        component: ()=> import('../pages/EstudianteConsultar')
     },
     {
         path: '/eliminar',
-        component: EstudianteEliminar
+   
+        component: ()=> import('../pages/EstudianteEliminar')
     },
     {
         path: '/grabar',
-        component: EstudianteGuardar
+       
+        component: ()=> import('../pages/EstudianteGuardar')
+    },
+    {
+        path: '/:pathMatch(.*)*',
+  
+        component: ()=> import('../pages/NoFoundPage')
     }
+
+
    
 ]
 
